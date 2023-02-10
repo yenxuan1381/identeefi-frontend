@@ -1,16 +1,20 @@
 import './App.css';
-import { Button } from './components/Button';
+import Home from './components/pages/Home';
+import Login from './components/pages/Login';
+import QrScanner from './components/pages/QrScanner';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <div className='container'>
-      <h1>IDENTEEFI</h1>
-      <p>ANTI-COUNTERFEIT PRODUCT IDENTIFICATION SYSTEM</p>
-      <h5>Know Your Products</h5>
-      <div className="button-container">
-        <Button className="btns" buttonStyle='btn--outline' buttonSize='btn--large'>Scan QR Code</Button>
-      </div>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route exact path='/' element={< Home />}></Route>
+        <Route exact path='/login' element={< Login />}></Route>
+        <Route exact path='/scan-qr' element={< QrScanner />}></Route>
+        {/* <Route path='/' exact component={Home} />
+        <Route path='/login' component={Login} /> */}
+      </Routes>
+    </BrowserRouter>
   );
 }
 
