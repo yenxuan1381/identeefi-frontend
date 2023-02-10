@@ -1,4 +1,4 @@
-import './Login.css';
+import '../../css/Login.css';
 import { useRef, useState, useEffect } from 'react';
 import { Button } from '../Button';
 
@@ -25,7 +25,7 @@ const Login = () => {
     };
 
     return (
-        <div className="container">
+        <div className="login-container">
             <div className="form-box">
                 <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
                 <h1>IDENTEEFI</h1>

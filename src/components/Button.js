@@ -1,8 +1,6 @@
-import './Button.css';
-import { Link } from 'react-router-dom';
+import '../css/Button.css';
 
-const STYLES = ['btn--primary', 'btn--outline'];
-
+const STYLES = ['btn--primary', 'btn--outline', 'btn--long'];
 const SIZES = ['btn--medium', 'btn--large'];
 
 export const Button = ({ 
@@ -28,14 +26,5 @@ export const Button = ({
         >
             {children}
         </button>
-    // <Link to='/scan-qr' className='btn-mobile'>
-    //     <button 
-    //         className={`btn ${checkButtonStyle} ${checkButtonSize}`} 
-    //         onClick={onClick}
-    //         type={type}
-    //     >
-    //         {children}
-    //     </button>
-    // </Link>
   );
 }

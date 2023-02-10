@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import QrReader from 'react-qr-scanner'
-import './QrScanner.css'
+import '../../css/QrScanner.css'
 
 class QrScanner extends Component {
   constructor(props){
@@ -27,9 +27,9 @@ class QrScanner extends Component {
     }
 
     return(
-      <div className='container'>
-        <div className="container-box">
-          <h2>Qr Scanner</h2>
+      <div className='qr-container'>
+        <div className="qr-container-box">
+          <h1>Qr Scanner</h1>
           <QrReader
             delay={this.state.delay}
             style={previewStyle}

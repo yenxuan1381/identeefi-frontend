@@ -25,12 +25,27 @@
     transition: all 0.3s ease-out;
 }
 
+.btn--long {
+    width: 90%;
+    top: 4.7em;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background-color: #fff;
+    border: 2px solid #98b5d5;
+    outline: none;
+    padding: 10px;
+    font-size: 13px;
+    color: rgba(0, 0, 0);
+    border-radius: 40px;
+    transition: all 0.3s ease-out;
+}
+
 .btn--medium {
     padding: 8px 20px;
     font-size: 20px;
 }
 
-.btn--large{
+.btn--large {
     padding: 12px 26px;
     font-size: 20px;
 }
@@ -39,5 +54,11 @@
 .btn--large:hover {
     background-color: #fff;
     color: #242424;
+    transition: all 0.3s ease-out;
+}
+
+.btn--long:hover{
+    background-color: #98b5d5;
+    color: #fff;
     transition: all 0.3s ease-out;
 }

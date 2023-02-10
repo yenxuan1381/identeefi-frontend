@@ -1,10 +1,10 @@
-import './Home.css';
+import '../../css/Home.css';
 import { Button } from '../Button';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
-    <div className='container'>
+    <div className='home-container'>
       <h1>IDENTEEFI</h1>
       <p>ANTI-COUNTERFEIT PRODUCT IDENTIFICATION SYSTEM</p>
       <div className="button-container">
