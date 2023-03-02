@@ -5,23 +5,43 @@ import Admin from './components/pages/Admin';
 import Manufacturer from './components/pages/Manufacturer';
 import Supplier from './components/pages/Supplier';
 import Retailer from './components/pages/Retailer';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import {  Routes, Route } from 'react-router-dom';
+import RequireAuth from './components/RequireAuth';
+import Layout from './components/Layout';
 
 function App() {
   return (
-    <BrowserRouter>
       <Routes>
-        <Route exact path='/' element={< Home />}></Route>
-        <Route exact path='/login' element={< Login />}></Route>
-        <Route exact path='/scan-qr' element={< QrScanner />}></Route>
+        <Route path='/' element= {<Layout />}>
 
-        <Route exact path='/admin' element={< Admin />}></Route>
-        <Route exact path='/manufacturer' element={< Manufacturer />}></Route>
-        <Route exact path='/supplier' element={< Supplier />}></Route>
-        <Route exact path='/retailer' element={< Retailer />}></Route>
+          {/* public routes */}
+          <Route exact path='/' element={< Home />}></Route>
+          <Route exact path='/login' element={< Login />}></Route>
+          <Route exact path='/scan-qr' element={< QrScanner />}></Route>
 
+          {/* private routes */}
+          <Route element={<RequireAuth allowedRoles={["admin"]}/>}>
+            <Route exact path='/admin' element={< Admin />}></Route>
+          </Route>
+
+          <Route element={<RequireAuth allowedRoles={["manufacturer"]}/>}>
+            <Route exact path='/manufacturer' element={< Manufacturer />}></Route>
+          </Route>
+
+          <Route element={<RequireAuth allowedRoles={["supplier"]}/>}>
+            <Route exact path='/supplier' element={< Supplier />}></Route>
+          </Route>
+
+          <Route element={<RequireAuth allowedRoles={["retailer"]}/>}>
+            <Route exact path='/retailer' element={< Retailer />}></Route>
+          </Route>
+
+          {/* catch all */}
+          {/* <Route path='*' element={< Missing />}></Route> */}
+
+        </Route>
       </Routes>
-    </BrowserRouter>
+    
   );
 }
 
