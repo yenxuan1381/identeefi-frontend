@@ -1,9 +1,11 @@
 import '../css/Button.css';
+import { Link } from 'react-router-dom';
 
 const STYLES = ['btn--primary', 'btn--outline', 'btn--long'];
 const SIZES = ['btn--medium', 'btn--large'];
 
-export const Button = ({
+export const LinkButton = ({
+    to,
     children,
     type,
     onClick,
@@ -19,12 +21,14 @@ export const Button = ({
         : SIZES[0];
 
     return (
+        <Link to={to}>
             <button
                 className={`btn ${checkButtonStyle} ${checkButtonSize}`}
                 onClick={onClick}
                 type={type}
-            >
+                >
                 {children}
             </button>
+        </Link>
     );
 }

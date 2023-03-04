@@ -5,6 +5,8 @@ import Admin from './components/pages/Admin';
 import Manufacturer from './components/pages/Manufacturer';
 import Supplier from './components/pages/Supplier';
 import Retailer from './components/pages/Retailer';
+import AddAccount from './components/pages/AddAccount';
+import ManageAccount from './components/pages/ManageAccount';
 import {  Routes, Route } from 'react-router-dom';
 import RequireAuth from './components/RequireAuth';
 import Layout from './components/Layout';
@@ -22,6 +24,8 @@ function App() {
           {/* private routes */}
           <Route element={<RequireAuth allowedRoles={["admin"]}/>}>
             <Route exact path='/admin' element={< Admin />}></Route>
+            <Route exact path='/add-account' element={< AddAccount />}></Route>
+            <Route exact path='/manage-account' element={< ManageAccount />}></Route>
           </Route>
 
           <Route element={<RequireAuth allowedRoles={["manufacturer"]}/>}>

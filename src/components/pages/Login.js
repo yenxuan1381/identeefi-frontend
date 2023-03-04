@@ -18,7 +18,6 @@ const Login = () => {
     const [pwd, setPwd] = useState('');
     const [errMsg, setErrMsg] = useState('');
 
-
     useEffect(() => {
         userRef.current.focus()
     }, []);
@@ -70,6 +69,7 @@ const Login = () => {
                 <form onSubmit={handleSubmit}>
                     <label htmlFor="username">Username</label>
                     <input
+                        className='login'
                         type="text"
                         id="username"
                         ref={userRef}
@@ -80,6 +80,7 @@ const Login = () => {
                     <br />
                     <label htmlFor="password">Password</label>
                     <input
+                        className='login'
                         type="password"
                         id="password"
                         onChange={(e) => setPwd(e.target.value)}
