@@ -1,7 +1,8 @@
 :root {
     --primary: #fff;
-    --secondary: #1e1f4e;
+    --secondary: #98b5d5;
 }
+
 
 .btn {
     padding: 8px 20px;
@@ -38,6 +39,7 @@
     color: rgba(0, 0, 0);
     border-radius: 40px;
     transition: all 0.3s ease-out;
+    display: block important;
 }
 
 .btn--medium {
